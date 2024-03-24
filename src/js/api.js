@@ -18,5 +18,3 @@ export function fetchData(query) {
     })
     .catch(error => console.log('error'));
 }
-
-fetchData('cat');
