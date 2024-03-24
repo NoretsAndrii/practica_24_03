@@ -1,7 +1,9 @@
 const shopList = document.querySelector('.shop-list');
 const basket = document.querySelector('.basket');
 
-export const totalProducts = [];
+const totalProducts = [];
+
+export const test = 5;
 
 fetch('https://fakestoreapi.com/products')
   .then(response => {
