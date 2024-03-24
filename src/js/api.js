@@ -1,4 +1,3 @@
-//https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
 export function fetchData(query) {
   const searchParams = new URLSearchParams({
     client_id: 'xankM5JcWjNdU3aQm9SCaf_qfZApy4ZcN2-HgCA1cGs',
