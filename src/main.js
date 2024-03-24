@@ -1,47 +1,26 @@
-const shopList = document.querySelector('.shop-list');
-const basket = document.querySelector('.basket');
+// Створіть годинник, який відображає поточний реальний час
+// і оновлюється кожну секунду.Виведіть час у форматі
+// "години:хвилини:секунди" на веб - сторінці.  Поряд з годинником
+// потріно відобразити поточну дату.
 
-const totalProducts = [];
+// const clock = document.querySelector('#clock');
 
-export const test = 5;
+// function updateClock() {
+//   const date = new Date();
+//   const hours = String(date.getHours()).padStart(2, '0');
+//   const minutes = String(date.getMinutes()).padStart(2, '0');
+//   const seconds = String(date.getSeconds()).padStart(2, '0');
+//   const year = date.getFullYear();
+//   const month = String(date.getMonth() + 1).padStart(2, '0');
+//   const data = String(date.getDate()).padStart(2, '0');
+//   clock.textContent = `${hours}:${minutes}:${seconds} ${year}/${month}/${data}`;
+// }
 
-fetch('https://fakestoreapi.com/products')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(response.status);
-    }
+// setInterval(updateClock, 1000);
 
-    return response.json();
-  })
-  .then(data => {
-    shopList.innerHTML = createContent(data);
-    console.log(data);
-  })
-  .catch(error => console.log('ERROR:', error));
+// Посилання на API https://unsplash.com/documentation
+// Отримати дані з API по ключовому слову і відрендерити галерею зображень
+// Параметри запиту зібрати за допомогою SearchParams
 
-shopList.addEventListener('click', handleClick);
-
-function handleClick(event) {
-  if (event.currentTarget === event.target) return;
-  const currentProduct = event.target.closest('.shop-list-item');
-  const currentPrice = currentProduct.querySelector(
-    '.shop-list-item-price'
-  ).textContent;
-  totalProducts.push(currentProduct);
-  console.log(totalProducts);
-  console.log(currentProduct);
-  console.log(currentPrice);
-}
-
-function createContent(arr) {
-  const markup = arr
-    .map(
-      elem => ` <li class="shop-list-item">
-            <h2>${elem.title}</h2>
-            <p class="shop-list-item-price">${elem.price}</p>
-            <p>${elem.category}</p>
-        </li>`
-    )
-    .join('');
-  return markup;
-}
+import './js/api';
+import './js/foto';
